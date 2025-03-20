@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Input } from '../../components/Input'
+import { Button } from '../../components/Button'
 
 export function Register() {
   return (
@@ -23,9 +24,9 @@ export function Register() {
         <Input name='name' placeholder='Nome' />
         <Input type='email' name='email' placeholder='E-mail' />
         <Input type='password' name='password' placeholder='Senha' />
-        <button type='submit' className='mt-2'>
+        <Button type='submit' className='mt-2'>
           Criar conta
-        </button>
+        </Button>
       </form>
     </div>
   )
