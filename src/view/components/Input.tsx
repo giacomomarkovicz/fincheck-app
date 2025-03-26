@@ -1,27 +1,40 @@
-import { ComponentProps } from 'react'
+import { ComponentProps, forwardRef } from 'react'
+import { CrossCircledIcon } from '@radix-ui/react-icons'
 
 interface InputProps extends ComponentProps<'input'> {
   name: string
+  error?: string
 }
 
-export function Input({ placeholder, name, id, ...props }: InputProps) {
-  const inputId = id ?? name
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ placeholder, name, id, error, ...props }, ref) => {
+    const inputId = id ?? name
 
-  return (
-    <div className='relative'>
-      <input
-        {...props}
-        name={name}
-        id={inputId}
-        className='peer h-[52px] w-full rounded-lg border border-gray-500 bg-white px-3 pt-4 text-gray-800 transition-all outline-none placeholder-shown:pt-0 focus:border-gray-800'
-        placeholder=' '
-      />
-      <label
-        htmlFor={inputId}
-        className='pointer-events-none absolute top-2 left-[13px] text-xs text-gray-700 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base'
-      >
-        {placeholder}
-      </label>
-    </div>
-  )
-}
+    return (
+      <>
+        <div className='relative'>
+          <input
+            {...props}
+            ref={ref}
+            name={name}
+            id={inputId}
+            className='peer h-[52px] w-full rounded-lg border border-gray-500 bg-white px-3 pt-4 text-gray-800 transition-all outline-none placeholder-shown:pt-0 focus:border-gray-800'
+            placeholder=' '
+          />
+          <label
+            htmlFor={inputId}
+            className='pointer-events-none absolute top-2 left-[13px] text-xs text-gray-700 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base'
+          >
+            {placeholder}
+          </label>
+        </div>
+        {error && (
+          <div className='mt-2 flex items-center gap-2 text-red-900'>
+            <CrossCircledIcon />
+            <span className='text-xs'>{error}</span>
+          </div>
+        )}
+      </>
+    )
+  }
+)
