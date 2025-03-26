@@ -24,11 +24,17 @@ export function Login() {
       <form onSubmit={handleSubmit} className='mt-[60px] flex flex-col gap-4'>
         <Input
           type='email'
-          error='hahahaha'
           placeholder='E-mail'
+          error={errors.email?.message}
           {...register('email')}
         />
-        <Input type='password' placeholder='Senha' {...register('password')} />
+
+        <Input
+          type='password'
+          placeholder='Senha'
+          error={errors.password?.message}
+          {...register('password')}
+        />
 
         <Button type='submit' className='mt-2'>
           Entrar
