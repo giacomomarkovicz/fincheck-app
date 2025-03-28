@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
+  --color-gray-0: '#F8F9FA';
   --color-gray-50: #f8f9fa;
   --color-gray-100: #f1f3f5;
   --color-gray-200: #e9ecef;
@@ -89,6 +90,7 @@
   --color-cyan-800: #0c8599;
   --color-cyan-900: #0b7285;
 
+  --color-teal-0: #e6fcf5;
   --color-teal-50: #e6fcf5;
   --color-teal-100: #c3fae8;
   --color-teal-200: #96f2d7;
