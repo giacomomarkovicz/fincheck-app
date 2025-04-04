@@ -3,7 +3,10 @@ import { TransactionsIcon } from '../../../../components/icons/TransactionsIcon'
 import { FilterIcon } from '../../../../components/icons/FilterIcon'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { MONTHS } from '../../../../../app/config/constants'
-import { cn } from '../../../../../app/utils/cn'
+import { SliderOption } from './SliderOption'
+
+import 'swiper/swiper-bundle.css'
+import { SliderNavigation } from './SliderNavigation'
 
 export function Transactions() {
   return (
@@ -22,19 +25,17 @@ export function Transactions() {
           </button>
         </div>
 
-        <div className='mt-6'>
+        <div className='relative mt-6'>
           <Swiper slidesPerView={3} centeredSlides>
-            {MONTHS.map((month) => (
+            <SliderNavigation />
+            {MONTHS.map((month, index) => (
               <SwiperSlide key={month}>
                 {({ isActive }) => (
-                  <button
-                    className={cn(
-                      'h-12 w-full rounded-full text-sm font-medium tracking-[-0.5px] text-gray-800',
-                      isActive && 'bg-white'
-                    )}
-                  >
-                    {month}
-                  </button>
+                  <SliderOption
+                    isActive={isActive}
+                    month={month}
+                    index={index}
+                  />
                 )}
               </SwiperSlide>
             ))}
