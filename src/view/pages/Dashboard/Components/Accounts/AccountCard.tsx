@@ -1,5 +1,7 @@
+import { cn } from '../../../../../app/utils/cn'
 import { formatCurrency } from '../../../../../app/utils/formatCurrency'
 import { BankAccountTypeIcon } from '../../../../components/icons/BankAccountTypeIcon'
+import { useDashboard } from '../DashboardContext/useDashboard'
 
 interface AccountCardProps {
   color: string
@@ -9,6 +11,8 @@ interface AccountCardProps {
 }
 
 export function AccountCard({ balance, color, name, type }: AccountCardProps) {
+  const { areValuesVisible } = useDashboard()
+
   return (
     <div
       className='flex h-[200px] flex-col justify-between rounded-2xl border-b-4 border-b-teal-950 bg-white p-4'
@@ -21,7 +25,12 @@ export function AccountCard({ balance, color, name, type }: AccountCardProps) {
         </span>
       </div>
       <div>
-        <span className='block font-medium tracking-[-0.5px] text-gray-800'>
+        <span
+          className={cn(
+            'block font-medium tracking-[-0.5px] text-gray-800',
+            !areValuesVisible && 'blur-sm'
+          )}
+        >
           {formatCurrency(balance)}
         </span>
         <small className='text-sm text-gray-800'>Saldo atual</small>
