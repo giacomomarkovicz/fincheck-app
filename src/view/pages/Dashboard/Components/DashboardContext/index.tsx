@@ -1,4 +1,4 @@
-import React, { createContext, useCallback } from 'react'
+import React, { createContext, useCallback, useState } from 'react'
 
 interface DashboardContextProps {
   areValuesVisible: boolean
@@ -8,7 +8,7 @@ interface DashboardContextProps {
 export const DashboardContext = createContext({} as DashboardContextProps)
 
 export function DashboardProvider({ children }: { children: React.ReactNode }) {
-  const [areValuesVisible, setAreValuesVisible] = React.useState(false)
+  const [areValuesVisible, setAreValuesVisible] = useState(false)
 
   const toggleValuesVisibility = useCallback(() => {
     setAreValuesVisible((prevState) => !prevState)
