@@ -145,4 +145,31 @@
   --color-orange-700: #f76707;
   --color-orange-800: #e8590c;
   --color-orange-900: #d9480f;
+
+  @keyframes slideDownAndFade {
+    from {
+      opacity: 0;
+      transform: translateY(-2px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUpAndFade {
+    from {
+      opacity: 0;
+      transform: translateY(2px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  --animate-slide-down-and-fade: slideDownAndFade 800ms
+    cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-slide-up-and-fade: slideUpAndFade 800ms cubic-bezier(0.16, 1, 0.3, 1);
 }
