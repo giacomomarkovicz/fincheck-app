@@ -32,7 +32,7 @@ export function Transactions() {
           <header>
             <div className='flex items-center justify-between'>
               <TransactionTypeDropdown />
-              <button>
+              <button className='cursor-pointer'>
                 <FilterIcon />
               </button>
             </div>

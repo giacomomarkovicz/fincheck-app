@@ -8,7 +8,7 @@ export function TransactionTypeDropdown() {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger>
-        <button className='flex items-center gap-2'>
+        <button className='flex items-center gap-2 cursor-pointer'>
           <TransactionsIcon />
           <span className='text-sm font-medium tracking-[-0.5px] text-gray-800'>
             Transações
