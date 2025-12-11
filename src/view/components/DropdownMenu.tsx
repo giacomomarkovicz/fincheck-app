@@ -68,7 +68,7 @@ function DropdownMenuItem({
     <RdxDropdownMenu.Item
       onSelect={onSelect}
       className={cn(
-        'flex min-h-[40px] cursor-pointer items-center rounded-2xl px-4 py-2 text-sm text-gray-800 transition-colors outline-none data-[highlighted]:bg-gray-50',
+        'flex min-h-[40px] items-center rounded-2xl px-4 py-2 text-sm text-gray-800 transition-colors outline-none data-[highlighted]:bg-gray-50',
         className
       )}
     >

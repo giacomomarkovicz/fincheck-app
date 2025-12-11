@@ -15,14 +15,14 @@ export function SliderNavigation({
   return (
     <div>
       <button
-        className='rounded-full py-3 pr-3.5 pl-2.5 transition-colors cursor-pointer enabled:hover:bg-black/10 disabled:opacity-40'
+        className='rounded-full py-3 pr-3.5 pl-2.5 transition-colors enabled:hover:bg-black/10 disabled:opacity-40'
         onClick={() => swiper.slidePrev()}
         disabled={isBeginning}
       >
         <ChevronLeftIcon className='h-6 w-6 text-white' />
       </button>
       <button
-        className='rounded-full py-3 pr-3.5 pl-2.5 transition-colors cursor-pointer enabled:hover:bg-black/10 disabled:opacity-40'
+        className='rounded-full py-3 pr-3.5 pl-2.5 transition-colors enabled:hover:bg-black/10 disabled:opacity-40'
         onClick={() => swiper.slideNext()}
         disabled={isEnd}
       >

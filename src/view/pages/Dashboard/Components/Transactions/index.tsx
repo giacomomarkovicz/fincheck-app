@@ -41,7 +41,7 @@ export function Transactions() {
           <header>
             <div className='flex items-center justify-between'>
               <TransactionTypeDropdown />
-              <button className='cursor-pointer' onClick={handleOpenFilterModal}>
+              <button onClick={handleOpenFilterModal}>
                 <FilterIcon />
               </button>
             </div>
