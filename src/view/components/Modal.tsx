@@ -23,8 +23,8 @@ export function Modal({
       <Dialog.Portal>
         <Dialog.Overlay
           className={cn(
-            'fixed inset-0 z-50 bg-black/70 backdrop-blur-xs'
-            // 'data-[state=open]:animate-overlay-show'
+            'fixed inset-0 z-50 bg-black/70 backdrop-blur-xs',
+            'data-[state=open]:animate-overlay-show'
           )}
         />
         <Dialog.Content

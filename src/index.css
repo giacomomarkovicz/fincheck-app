@@ -180,16 +180,16 @@
   @keyframes contentShow {
     from {
       opacity: 0;
-      transform: translate(-50%, -48%) scale(0.96);
+      /* transform: translate(-50%, -50%) scale(0.96); */
     }
     to {
       opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
+      /* transform: translate(-50%, -50%) scale(1); */
     }
   }
 
-  --animate-overlay-show: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-content-show: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-overlay-show: overlayShow 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-content-show: contentShow 550ms cubic-bezier(0.16, 1, 0.3, 1);
 
   --animate-slide-down-and-fade: slideDownAndFade 800ms
     cubic-bezier(0.16, 1, 0.3, 1);
