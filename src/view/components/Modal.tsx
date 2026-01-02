@@ -1,4 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog'
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 import { cn } from '../../app/utils/cn'
 import { Cross2Icon } from '@radix-ui/react-icons'
 
@@ -22,7 +23,7 @@ export function Modal({
       <Dialog.Portal>
         <Dialog.Overlay
           className={cn(
-            'fixed inset-0 z-50 bg-black/70 backdrop-blur-xs',
+            'fixed inset-0 z-50 bg-black/70 backdrop-blur-xs'
             // 'data-[state=open]:animate-overlay-show'
           )}
         />
@@ -32,8 +33,21 @@ export function Modal({
             'data-[state=open]:animate-content-show'
           )}
         >
+          <VisuallyHidden asChild>
+            <Dialog.Title> {title}</Dialog.Title>
+          </VisuallyHidden>
+
+          <VisuallyHidden asChild>
+            <Dialog.Description>
+              Modal de filtros de conta e ano
+            </Dialog.Description>
+          </VisuallyHidden>
+
           <header className='flex h-12 items-center justify-between text-gray-800'>
-            <button className='h-12 w-12 flex items-center justify-center outline-none' onClick={onClose}>
+            <button
+              className='flex h-12 w-12 items-center justify-center outline-none'
+              onClick={onClose}
+            >
               <Cross2Icon className='h-6 w-6' />
             </button>
             <span className='text-lg font-bold tracking-[-1px]'>{title}</span>
