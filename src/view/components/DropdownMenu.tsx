@@ -31,6 +31,7 @@ function DropdownMenuTrigger({
         'outline-none focus:outline-none focus-visible:outline-none',
         className
       )}
+      asChild
     >
       {children}
     </RdxDropdownMenu.Trigger>
